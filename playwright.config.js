@@ -1,11 +1,10 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
-
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// require('dotenv').config();
+require('dotenv').config();
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -35,17 +34,20 @@ module.exports = defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'],username:process.env.USER_NAME,
+      password:process.env.USER_PASSWORD},
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: { ...devices['Desktop Firefox'],username:process.env.USER_NAME,
+      password:process.env.USER_PASSWORD},
     },
 
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      use: { ...devices['Desktop Safari'],username:process.env.USER_NAME,
+      password:process.env.USER_PASSWORD},
     },
 
     /* Test against mobile viewports. */
