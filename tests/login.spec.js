@@ -2,8 +2,8 @@
 const { test, expect } = require('@playwright/test');
 const { LoginPage } = require('../pages/admin/login-page');
 
-let emailAddress = "admin@my-proscore.com";
-let password = "admin1@3"
+let emailAddress = "*********";
+let password = "******"
 
 test('adminLogin',async({page}) =>{
   const adminLog = new LoginPage(page)
