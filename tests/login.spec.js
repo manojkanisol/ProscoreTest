@@ -1,6 +1,6 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
-const { LoginPage } = require('../pages/admin/login-page');
+const { LoginPage } = require('../pages/admin/login.page')
 
 let emailAddress = "*********";
 let password = "******"
